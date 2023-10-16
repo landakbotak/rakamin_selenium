@@ -106,6 +106,23 @@ public class LoginTest {
     public void userClickAnotherProduct() {
         driver.findElement(By.xpath("//*[@id='add-to-cart-sauce-labs-bike-light']")).click();
     }
+    @And ("user click product two")
+    public void userClickProductTwo() {
+        driver.findElement(By.xpath("//*[@id='add-to-cart-sauce-labs-bolt-t-shirt']")).click();
+    }
+    @And ("user click product three")
+    public void userClickProductThree() {
+        driver.findElement(By.xpath("//*[@id='add-to-cart-sauce-labs-fleece-jacket']")).click();
+    }
+
+    @And ("user click product four")
+    public void userClickProductFour() {
+        driver.findElement(By.xpath("//*[@id='add-to-cart-sauce-labs-onesie']")).click();
+    }
+    @And ("user click product five")
+    public void userClickProductFive() {
+        driver.findElement(By.xpath("//*[@id='add-to-cart-test.allthethings()-t-shirt-(red)']")).click();
+    }
 
     @Then("user in on checkout page")
     public void userInOnCheckoutPage() {
@@ -150,6 +167,29 @@ public class LoginTest {
         Assert.assertEquals(text, "Checkout: Overview");
     }
 
+    @And ("user click finish button")
+    public void userClickFinishButton() {
+        driver.findElement(By.xpath("//*[@id='finish']")).click();
+    }
 
+    @Then ("user in on complete page")
+    public void userInOnCompletePage() {
+        String text =  driver.findElement(By.xpath("//*[@id='header_container']/div[2]/span")).getText();
+        Assert.assertEquals(text, "Checkout: Complete!");
+    }
+
+    @And ("user click tree button")
+    public void userClickTreeButton (){
+        driver.findElement(By.xpath("//*[@id='react-burger-menu-btn']")).click();
+    }
+    @And ("user click logout")
+    public void userClickLogout() {
+        driver.findElement(By.xpath("//*[@id='logout_sidebar_link']")).click();
+    }
+    @Then ("user in login page")
+    public void userInLoginPage(){
+        String text =  driver.findElement(By.xpath("//*[@id='login_credentials']/h4")).getText();
+        Assert.assertEquals(text, "Accepted usernames are:");
+    }
 
 }

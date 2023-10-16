@@ -37,10 +37,14 @@ Feature: Login page SauceDemo
         And click login button
         Then User in on dashboard page
         And user click the Add To Cart button
-        And user click checkout logo
-        And user click continue shopping button
-        Then User in on dashboard page
+#        And user click checkout logo
+#        And user click continue shopping button
+#        Then User in on dashboard page
         And user click another product
+        And user click product two
+        And user click product three
+        And user click product four
+        And user click product five
         And user click checkout logo
         Then user in on checkout page
 
@@ -61,3 +65,16 @@ Feature: Login page SauceDemo
         And input zip code
         And user click continue button
         Then user in on overview page
+        And user click finish button
+        Then user in on complete page
+
+    @Logout
+    Scenario: User do logout
+        Given Halaman login sauce demo
+        When Input username
+        And Input password
+        And click login button
+        Then User in on dashboard page
+        And user click tree button
+        And user click logout
+        Then user in login page
